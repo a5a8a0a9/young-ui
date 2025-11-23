@@ -13,7 +13,15 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "young-ui-lib": [
+        // 開發完成後，發佈套件時請改回原本的路徑
+        "./dist/young-ui-lib"
+        // 開發時期望直接引用原始碼路徑，以便即時看到變更效果
+        // "projects/young-ui-lib/src/public-api.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -22,5 +30,19 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/young-ui-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/young-ui-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/showcase/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/showcase/tsconfig.spec.json"
+    }
+  ]
 }
